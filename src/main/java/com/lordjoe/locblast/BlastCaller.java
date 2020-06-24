@@ -1,11 +1,15 @@
 package com.lordjoe.locblast;
 
+import com.lordjoe.ssh.SlurmClusterRunner;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -15,19 +19,31 @@ import java.util.Map;
  */
 public class BlastCaller  extends HttpServlet{
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response)  throws IOException {
-        doGet( request,   response);
+    private static Map<String, SlurmClusterRunner>  byID = new HashMap<>();
+
+
+    public void addRunner(SlurmClusterRunner sr) {
+        String id = sr.job.id;
+        byID.put(id,sr);
+    }
+
+
+    public  Map<String,String> buildParameters(HttpServletRequest request)   {
+        Map<String,String> ret = new HashMap<>();
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        for (String s : parameterMap.keySet()) {
+            String[] strings = parameterMap.get(s);
+            if(strings.length ==1)
+                ret.put(s,strings[0]);
+        }
+        return ret;
     }
     public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException{
-        Map<String, String[]> parameterMap = request.getParameterMap();
-        Enumeration<String> parameterNames = request.getParameterNames();
-        String program = request.getParameter("program");
-        PrintWriter out = response.getWriter();
-        out.println("<html>");
-        out.println("<body>");
-        out.println("<h1>Hello Servlet Get</h1>");
-        out.println("</body>");
-        out.println("</html>");
+            throws IOException, ServletException {
+        Map<String, String> c = buildParameters(request);
+        ServletContext sc = request.getServletContext();
+        RequestDispatcher rd = sc.getRequestDispatcher("/JobState.jsp");
+
+
     }
 }

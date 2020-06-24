@@ -17,6 +17,8 @@ public class BlastLaunchDTO {
     public File output;
 
 
+
+
     public BlastLaunchDTO(BLASTProgram program) {
         this.program = program;
     }
