@@ -1,6 +1,5 @@
 package com.lordjoe.blast;
 
-import com.lordjoe.ssh.IJobRunner;
 import com.lordjoe.ssh.JobState;
 
 import javax.servlet.ServletOutputStream;
@@ -33,7 +32,7 @@ public class BLASTMonitorServlet extends HttpServlet {
         String lastState = request.getParameter("state");
         String id = request.getParameter("JobId");
         String pprogramName = request.getParameter("program");
-        IJobRunner runner = IJobRunner.fromID(id);
+         JSonClusterRunner runner = JSonClusterRunner.fromID(id);
         JobState currentState = runner.getState();
         String currentStateStr = currentState.toString();
         String pageText = null;
@@ -47,7 +46,7 @@ public class BLASTMonitorServlet extends HttpServlet {
 
     }
 
-    public static String generateText(String id, String currentStateStr, IJobRunner runner) {
+    public static String generateText(String id, String currentStateStr, JSonClusterRunner runner) {
         StringBuilder sb = new StringBuilder();
         sb.append("<!DOCTYPE html>\n");
         sb.append("<html lang=\"en-US\">\n" +
@@ -68,7 +67,7 @@ public class BLASTMonitorServlet extends HttpServlet {
         return sb.toString();
     }
 
-    public static String generateStateUrl(String id, String currentStateStr, IJobRunner runner) {
+    public static String generateStateUrl(String id, String currentStateStr, JSonClusterRunner runner) {
         StringBuilder sb = new StringBuilder();
         sb.append("./jobstate.blastState?JobId=" + id);
         return sb.toString();

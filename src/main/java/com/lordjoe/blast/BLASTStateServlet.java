@@ -1,6 +1,5 @@
 package com.lordjoe.blast;
 
-import com.lordjoe.ssh.IJobRunner;
 import com.lordjoe.ssh.JobState;
 
 import javax.servlet.ServletOutputStream;
@@ -24,7 +23,9 @@ public class BLASTStateServlet extends HttpServlet {
     //      jobs = j;
     // }
 
-    public static final String[] colors = {
+ 
+
+	public static final String[] colors = {
             "Yellow",
             "LightSkyBlue",
             "Chartreuse",
@@ -46,7 +47,7 @@ public class BLASTStateServlet extends HttpServlet {
                          HttpServletResponse response) throws  IOException {
         String id = request.getParameter("JobId");
         String pprogramName = request.getParameter("program");
-        IJobRunner runner = IJobRunner.fromID(id);
+        JSonClusterRunner runner = JSonClusterRunner.fromID(id);
          String pageText = "";
         if(runner != null ) {
             JobState lastState = runner.getLastState();
@@ -80,14 +81,14 @@ public class BLASTStateServlet extends HttpServlet {
             "   }\n" +
             "</script>/n";
 
-    public static String generateShowResults(String id, JobState currentState, IJobRunner runner) {
+    public static String generateShowResults(String id, JobState currentState, JSonClusterRunner runner) {
         StringBuilder sb = new StringBuilder();
         sb.append(MOVE_ON);
         return sb.toString();
     }
 
 
-    public static String generateText(String id, JobState currentState, IJobRunner runner) {
+    public static String generateText(String id, JobState currentState, JSonClusterRunner runner) {
         StringBuilder sb = new StringBuilder();
         sb.append("       <meta http-equiv=\"refresh\" content=\"2\">\n");
         sb.append("        <table style=\"width:50%; border:1 \">\n");

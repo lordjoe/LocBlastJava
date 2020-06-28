@@ -9,17 +9,17 @@ import java.util.UUID;
  * Date: 1/25/20
  */
 public class BlastLaunchDTO {
-    public final BLASTProgram program;
+    public final String program;
     public final String id = UUID.randomUUID().toString();
     public String database;
     public File query;   // original file
-    public BLASTFormat format;
+    public String format;
     public File output;
 
 
 
 
-    public BlastLaunchDTO(BLASTProgram program) {
+    public BlastLaunchDTO(String program) {
         this.program = program;
     }
 
@@ -56,3 +56,4 @@ public class BlastLaunchDTO {
         return base + ".xml";
     }
 }
+
