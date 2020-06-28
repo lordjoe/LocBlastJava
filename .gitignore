@@ -1,0 +1,5 @@
+/lib/
+/.settings/
+/src/main/resources/.idea/
+/target/
+/WebContent/WEB-INF/lib/SlurmRunner.jar
