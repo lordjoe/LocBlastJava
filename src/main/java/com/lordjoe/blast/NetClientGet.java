@@ -28,7 +28,8 @@ public class NetClientGet {
 	}
 	
 	public static String launchServer() {
- 	    	  String command = "java -jar SlurmRunner.jar com.lordjoe.server.JettyServer";
+		      String usreDir = System.getProperty("user.dir");
+ 	    	  String command = "java -jar /opt/blastserver/SLURM_Runner.jar com.lordjoe.server.JettyServer";
 	    	  	String response = captureExecOutput(command);
 	    	  	return response;
 	 	}
@@ -50,11 +51,13 @@ public class NetClientGet {
 		        connection.setDoOutput(true);
 		        //Send request
 		        OutputStream os = connection.getOutputStream();
-		        OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
-	//	        System.out.println(json.toString());
-		        osw.write(json.toString());
-		        osw.flush();
-		        osw.close();
+		        if(json != null) {
+					OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+					//	        System.out.println(json.toString());
+					osw.write(json.toString());
+					osw.flush();
+					osw.close();
+				}
 		        if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
 		           return true;
 		        } else {

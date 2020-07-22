@@ -18,5 +18,8 @@
   %>
   <a href="locblast.jsp">LocBlast</a></p>
   <a href="/SlurmProject/myIndex">Caller</a>
+ <a href="/SlurmProject/blastRunner?Sample=sequence">Call With Sequence</a> <p/>
+ <a href="/SlurmProject/blastRunner?Sample=file">Call With File</a> <p/>
+ <a href="/SlurmProject/blastRunner?stop=true">Stop</a> <p/>
   </body>
 </html>

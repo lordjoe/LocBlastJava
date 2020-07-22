@@ -45,6 +45,25 @@
 		<url-pattern>/blastRunner</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<description>This servlet sends file to client</description>
+		<display-name>DownloadFileServlet</display-name>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<servlet-class>com.lordjoe.blast.DownloadFileServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<description>Location to store uploaded file</description>
+		<param-name>file-upload</param-name>
+		<param-value>
+			/opt/blastserver
+		</param-value>
+	</context-param>
+
 	<welcome-file-list>
 		<welcome-file>/myIndex</welcome-file>
 		<welcome-file>index.jsp</welcome-file>

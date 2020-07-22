@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactManager">
     <artifact type="war" name="SlurmProject:war">
-      <output-path>$PROJECT_DIR$/target</output-path>
+      <output-path>/opt/blastserver</output-path>
       <properties id="maven-jee-properties">
         <options>
           <module>SlurmProject</module>
@@ -32,6 +32,8 @@
             <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" />
             <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
             <element id="library" level="project" name="Maven: org.json:json:20180813" />
+            <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
+            <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
           </element>
         </element>
         <element id="directory" name="META-INF">
@@ -117,6 +119,28 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="Maven: commons-fileupload:commons-fileupload:1.4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: commons-io:commons-io:2.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.2/commons-io-2.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.2/commons-io-2.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.2/commons-io-2.2-sources.jar!/" />
+      </SOURCES>
     </library>
     <library name="Maven: log4j:log4j:1.2.17">
       <CLASSES>

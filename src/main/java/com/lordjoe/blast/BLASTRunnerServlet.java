@@ -1,5 +1,8 @@
 package com.lordjoe.blast;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.json.JSONObject;
 
 import javax.servlet.RequestDispatcher;
@@ -29,7 +32,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                     "\"bn_evalue\":\"10.0\",\n" +
                     "\"tbn_matrix\":\"BLOSUM62\",\n" +
                     "\"id\":\"b386676b-bae1-4a3f-80ba-08ca02566dfc\",\n" +
-                    "\"datalib\":\"db/pdt\",\n" +
+                    "\"datalib\":\"swissprot -remote\",\n" +
                     "\"db_gapcosts\":\"11,1\",\n" +
                     "\"tbn_word_size\":\"6\",\n" +
                     "\"tbn_num_alignments\":\"50\",\n" +
@@ -80,7 +83,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                     "\"db_pseudocount\":\"0\",\n" +
                     "\"rpsb_evalue\":\"10.0\"}\n";
 
-    public static final String FILE_FILE_TEXT =  "{\"bx_evalue\":\"10.0\",\n" +
+    public static final String FILE_FILE_TEXT = "{\"bx_evalue\":\"10.0\",\n" +
             "\"bx_filter1\":\"L\",\n" +
             "\"bx_gapcosts\":\"11,1\",\n" +
             "\"tbx_word_size\":\"3\",\n" +
@@ -153,34 +156,38 @@ public class BLASTRunnerServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
-
-        String sample = request.getParameter("Sample");
-        if(sample != null)  {
-            JSONObject json = null;
-            if("sequence".equalsIgnoreCase(sample)) {
-                json = new JSONObject(SEQUENCE_FILE_TEXT);
-            }
-            if("file".equalsIgnoreCase(sample)) {
-                json = new JSONObject(FILE_FILE_TEXT);
-            }
-            if(json != null)  {
-               Map<String,Object> map = json.toMap();
-               new JSonClusterRunner(map).startJob();
-            }
-        }
-        else {
-            String id = request.getParameter("JobId");
-            JSonClusterRunner runner = null;
-            if (id != null) {
-                runner = JSonClusterRunner.fromID(id);
-
-            } else {
-                runner = handleBlastLaunch(request);
-                runner.startJob();
-            }
-        }
+        String stop = request.getParameter("stop");
         ServletContext sc = request.getServletContext();
-      //  RequestDispatcher rd = sc.getRequestDispatcher("/locBlast.monitorBlast?JobId=" + runner.getId());
+        if (stop != null) {
+            NetClientGet.callClientWithJSon("stop", null);
+
+        } else {
+            String sample = request.getParameter("Sample");
+            if (sample != null) {
+                JSONObject json = null;
+                if ("sequence".equalsIgnoreCase(sample)) {
+                    json = new JSONObject(SEQUENCE_FILE_TEXT);
+                }
+                if ("file".equalsIgnoreCase(sample)) {
+                    json = new JSONObject(FILE_FILE_TEXT);
+                }
+                if (json != null) {
+                    Map<String, Object> map = json.toMap();
+                    new JSonClusterRunner(map).startJob();
+                }
+            } else {
+                String id = request.getParameter("JobId");
+                JSonClusterRunner runner = null;
+                if (id != null) {
+                    runner = JSonClusterRunner.fromID(id);
+
+                } else {
+                    runner = handleBlastLaunch(request);
+                    runner.startJob();
+                }
+            }
+        }
+        //  RequestDispatcher rd = sc.getRequestDispatcher("/locBlast.monitorBlast?JobId=" + runner.getId());
         RequestDispatcher rd = sc.getRequestDispatcher("/myIndex");
         rd.forward(request, response);
     }
@@ -199,13 +206,67 @@ public class BLASTRunnerServlet extends HttpServlet {
     }
 
     protected JSonClusterRunner handleBlastLaunch(HttpServletRequest request) {
-        Map<String, String> map = getRequestParameters(request);
+
+        Map<String, String> map = getFiles(request);
         File file = new File("blastParameters.txt");
         String path = file.getAbsolutePath();
         saveParameters(map, file);
 
         return new JSonClusterRunner(map);
     }
+
+    private  Map<String, String> getFiles(HttpServletRequest request) {
+        Map<String, String> ret = new HashMap<>();
+        // Create a factory for disk-based file items
+        DiskFileItemFactory factory = new DiskFileItemFactory();
+
+// Configure a repository (to ensure a secure temp location is used)
+        ServletContext servletContext = this.getServletConfig().getServletContext();
+        Object attribute = servletContext.getAttribute("javax.servlet.context.tempdir");
+        File repository = (File) attribute;
+        factory.setRepository(repository);
+
+// Create a new file upload handler
+        ServletFileUpload upload = new ServletFileUpload(factory);
+        File uploadDir = new File("/opt/blastserver");
+// Parse the request
+        try {
+            List<FileItem> items = upload.parseRequest(request);
+            if (items != null && items.size() > 0) {
+                for (FileItem item : items) {
+                    // processes only fields that are not form fields
+                    if (!item.isFormField()) {
+                        String fileName = new File(item.getName()).getName();
+                         File storeFile = new File(uploadDir,fileName);
+
+                         if(storeFile.exists())      // overwrite is an error
+                             storeFile.delete();
+                          // saves the file on disk
+                        item.write(storeFile);
+                        Runtime.getRuntime().exec("chmod a+rw " + storeFile.getAbsolutePath());
+                        request.setAttribute("message",
+                                "Upload has been done successfully!");
+                        String name = item.getFieldName();
+                        String string = storeFile.getName();
+                        ret.put(name,string);
+
+                    }
+                    else {
+                        String name = item.getFieldName();
+                        String string = item.getString();
+                        ret.put(name,string);
+                    }
+                }
+            }
+            return ret;
+          } catch (Exception e) {
+            throw new RuntimeException(e);
+
+        }
+    }
+ 
+
+
 
     public static void saveParameters(Map<String, String> map, File file) {
         try {

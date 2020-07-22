@@ -26,6 +26,7 @@ public class IndexServlet extends HttpServlet {
             "   <a href=\"locblast.jsp\">LocBlast</a>  <p/> \n" +
             "   <a href=\"/SlurmProject/blastRunner?Sample=sequence\">Call With Sequence</a> <p/> \n" +
             "   <a href=\"/SlurmProject/blastRunner?Sample=file\">Call With File</a> <p/>  \n" +
+            "   <a href=\"/SlurmProject/blastRunner?stop=true\">Stop</a> <p/>  \n" +
             "  </body>\n" +
             "</html>";
 

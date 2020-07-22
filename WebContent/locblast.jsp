@@ -10,7 +10,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>locBLAST - Local NCBI BLAST+ Search</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">//<![CDATA[
@@ -47,8 +47,8 @@
     </script>
   </head>
   <body>
-  <div id="form" class="form" enctype="multipart/form-data">
-    <form action="blastRunner" method="get" name="blastform" >
+  <div id="form" class="form" >
+    <form action="blastRunner" method="POST" name="blastform" enctype='multipart/form-data' >
       <h2 style="text-align: center;">
         <i style="font-size: medium">loc</i><span style="color:blue; font-size: large">BLAST</span> - <span style="font-size: large;">local NCBI BLAST</span>
       </h2>
@@ -58,7 +58,7 @@
         <b title="BlastP, BlastN, BlastX, tBlastN, tBLASTX, DeltaBlast, PSI-Blast, RPS-Blast, and RPS-tBlastN">Program:</b>&nbsp;
         <select class="effect" id="program" name="program" onchange="prgmDesc()">
           <option value="blastn" id="blastn">BlastN</option>
-          <option value="blastp" id="blastp" selected="selected">BlastP</option>
+          <option value="blastp" id="blastp" selected>BlastP</option>
           <option value="blastx" id="blastx">BlastX</option>
           <option value="tblastn" id="tblastn">tBlastN</option>
           <option value="tblastx" id="tblastx">tBlastX</option>
@@ -72,22 +72,14 @@
       <div class="gap">
         <b title="NR, NR/NT, SwissProt, RefSeq-Protein, RefSeq-RNA, EST, PDB, PAT, and PDTDB">Database:</b>&nbsp;
         <select class="effect" id="datalib" name="datalib">
-          <optgroup label="Online DataBase">
-            <option value="nr -remote" id="nr" selected="selected">Non-redundant Protein/Nucleotide Sequences (NR/NT)</option>
-            <option value="swissprot -remote" id="swissprot">UniProtKB/Swiss-Prot (SwissProt)</option>
+            <option value="nr -remote" id="nr" >Non-redundant Protein/Nucleotide Sequences (NR/NT)</option>
+            <option value="swissprot -remote" id="swissprot" selected>UniProtKB/Swiss-Prot (SwissProt)</option>
             <option value="refseq_protein -remote" id="refseq_protein">Reference Proteins Sequences (RefSeq_Protein)</option>
             <option value="refseq_rna -remote" id="refseq_rna">Reference RNA Sequences (RefSeq_RNA)</option>
             <option value="est -remote" id="est">Expressed Sequence Tags (EST)</option>
             <option value="pdb -remote" id="pdb">Protein Data Bank (PDB)</option>
             <option value="pat -remote" id="pat">Patented Protein Sequences (PAT)</option>
-          </optgroup>
-          <optgroup label="Offline DataBase">
-            <option value="db/test_na" id="test_na">Test Nucleotide Sequence</option>
-            <option value="db/test_aa" id="test_aa">Test Protein Sequence</option>
-            <option value="db/CDD/Smart" id="Smart">Test SMART v6.0 Domain Database (SMART)</option>
-            <option value="db/pdt" id="pdt">Phytochemical &amp; Drug Target Database (PDTDB)</option>
-          </optgroup>
-        </select>
+          </select>
       </div>
       <div class="gap">
         Enter sequence below in

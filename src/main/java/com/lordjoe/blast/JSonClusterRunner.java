@@ -48,7 +48,7 @@ public class JSonClusterRunner  {
 		String fileName = mapx.get("query");
 		if(fileName != null) 
 			job.query =  new File(fileName);
-		mapx.put("id",job.id);
+		mapx.put("JobId",job.id);
 		return job; 
 	}
 
