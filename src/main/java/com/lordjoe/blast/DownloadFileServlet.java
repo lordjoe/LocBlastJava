@@ -24,9 +24,13 @@ public class DownloadFileServlet extends HttpServlet {
         String filePath = "/opt/blastserver/";
 
         String fileName = request.getParameter("filename");
+        String dirname = request.getParameter("directory");
 
-         
-        File downloadFile = new File(filePath + fileName);
+        File dirPath = new File(filePath) ;
+        File dirJob = dirPath;
+        if(dirname != null)
+            dirJob = new File(dirPath,dirname) ;
+        File downloadFile = new File(dirJob,fileName);
         FileInputStream inStream = new FileInputStream(downloadFile);
 
         // if you want to use a relative path to context root:

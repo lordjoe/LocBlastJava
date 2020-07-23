@@ -30,8 +30,8 @@ public class JSonClusterRunner  {
 			Object value = inMap.get(key);
 			mapx.put(key, value.toString());
 		}
-
-		this.job = buildJob( );
+		String id = mapx.get("JobId");
+		this.job = buildJob(id );
 		registerRunner(this);
 	}
 	
@@ -41,9 +41,9 @@ public class JSonClusterRunner  {
 		response = NetClientGet.callClientWithJSon("runProgram", json);
 	}
 
-	private BlastLaunchDTO buildJob() {
+	private BlastLaunchDTO buildJob(String id) {
 		String program = mapx.get("program");
-		job = new BlastLaunchDTO(program);
+		job = new BlastLaunchDTO(program,id);
 		job.database =  mapx.get("database");
 		String fileName = mapx.get("query");
 		if(fileName != null) 

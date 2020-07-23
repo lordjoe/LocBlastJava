@@ -182,7 +182,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                     runner = JSonClusterRunner.fromID(id);
 
                 } else {
-                    runner = handleBlastLaunch(request);
+                      runner = handleBlastLaunch(request);
                     runner.startJob();
                 }
             }
@@ -206,16 +206,18 @@ public class BLASTRunnerServlet extends HttpServlet {
     }
 
     protected JSonClusterRunner handleBlastLaunch(HttpServletRequest request) {
+        String idx = UUID.randomUUID().toString();
 
-        Map<String, String> map = getFiles(request);
+        Map<String, String> map = getFiles(request,idx);
         File file = new File("blastParameters.txt");
         String path = file.getAbsolutePath();
         saveParameters(map, file);
+        map.put("JobId",idx);
 
         return new JSonClusterRunner(map);
     }
 
-    private  Map<String, String> getFiles(HttpServletRequest request) {
+    private  Map<String, String> getFiles(HttpServletRequest request,String id) {
         Map<String, String> ret = new HashMap<>();
         // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -228,7 +230,11 @@ public class BLASTRunnerServlet extends HttpServlet {
 
 // Create a new file upload handler
         ServletFileUpload upload = new ServletFileUpload(factory);
-        File uploadDir = new File("/opt/blastserver");
+        File uploadDirParent = new File("/opt/blastserver");
+         File uploadDir = new File(uploadDirParent,id);
+        uploadDir.mkdirs();
+        uploadDir.setWritable(true,false) ; // writable for all
+        uploadDir.setReadable(true,false) ; // writable for all
 // Parse the request
         try {
             List<FileItem> items = upload.parseRequest(request);

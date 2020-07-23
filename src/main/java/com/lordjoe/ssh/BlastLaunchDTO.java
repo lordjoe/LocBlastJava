@@ -10,7 +10,7 @@ import java.util.UUID;
  */
 public class BlastLaunchDTO {
     public final String program;
-    public final String id = UUID.randomUUID().toString();
+    public final String id;
     public String database;
     public File query;   // original file
     public String format;
@@ -19,8 +19,12 @@ public class BlastLaunchDTO {
 
 
 
-    public BlastLaunchDTO(String program) {
+    public BlastLaunchDTO(String program,String idx) {
         this.program = program;
+        if(idx == null)
+            id = UUID.randomUUID().toString();
+        else
+            id = idx;
     }
 
     public String asCommand()
@@ -42,7 +46,7 @@ public class BlastLaunchDTO {
     }
 
     public BlastLaunchDTO  withNewQuery(File newQuery,File output)  {
-        BlastLaunchDTO ret = new BlastLaunchDTO(program);
+        BlastLaunchDTO ret = new BlastLaunchDTO(program,null);
         ret.database = database;
         ret.format = format;
         ret.query = newQuery;
