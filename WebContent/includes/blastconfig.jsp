@@ -1,7 +1,7 @@
     <div id="blastn_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="bn_num_alignments" name="bn_num_alignments">
+          <select class="effect" id="bn_max_target_seqs" name="bn_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
@@ -76,7 +76,7 @@
       <div id="blastp_program">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="bp_num_alignments" name="bp_num_alignments">
+          <select class="effect" id="bp_max_target_seqs" name="bp_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
@@ -157,7 +157,7 @@
       <div id="blastx_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="bx_num_alignments" name="bx_num_alignments">
+          <select class="effect" id="bx_max_target_seqs" name="bx_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
@@ -238,7 +238,7 @@
       <div id="tblastn_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="tbn_num_alignments" name="tbn_num_alignments">
+          <select class="effect" id="tbn_max_target_seqs" name="tbn_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
@@ -319,7 +319,7 @@
       <div id="tblastx_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="tbx_num_alignments" name="tbx_num_alignments">
+          <select class="effect" id="tbx_max_target_seqs" name="tbx_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
@@ -384,7 +384,7 @@
       <div id="deltablast_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="db_num_alignments" name="db_num_alignments">
+          <select class="effect" id="db_max_target_seqs" name="db_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
@@ -453,7 +453,7 @@
       <div id="psiblast_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="psib_num_alignments" name="psib_num_alignments">
+          <select class="effect" id="psib_max_target_seqs" name="psib_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
@@ -522,7 +522,7 @@
       <div id="rpsblast_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="rpsb_num_alignments" name="rpsb_num_alignments">
+          <select class="effect" id="rpsb_max_target_seqs" name="rpsb_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected="selected">50</option>
@@ -576,7 +576,7 @@
       <div id="rpstblastn_program" style="display: none;">
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
-          <select class="effect" id="rpstbn_num_alignments" name="rpstbn_num_alignments">
+          <select class="effect" id="rpstbn_max_target_seqs" name="rpstbn_max_target_seqs">
             <option value='0'>0</option>
             <option value='10'>10</option>
             <option value='50' selected="selected">50</option>

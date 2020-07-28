@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactManager">
     <artifact type="war" name="SlurmProject:war">
-      <output-path>/opt/blastserver</output-path>
+      <output-path>$PROJECT_DIR$/target</output-path>
       <properties id="maven-jee-properties">
         <options>
           <module>SlurmProject</module>

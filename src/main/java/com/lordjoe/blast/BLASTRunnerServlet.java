@@ -35,14 +35,14 @@ public class BLASTRunnerServlet extends HttpServlet {
                     "\"datalib\":\"swissprot -remote\",\n" +
                     "\"db_gapcosts\":\"11,1\",\n" +
                     "\"tbn_word_size\":\"6\",\n" +
-                    "\"tbn_num_alignments\":\"50\",\n" +
-                    "\"rpstbn_num_alignments\":\"50\",\n" +
+                    "\"tbn_max_target_seqs\":\"50\",\n" +
+                    "\"rpstbn_max_target_seqs\":\"50\",\n" +
                     "\"psib_evalue\":\"10.0\",\n" +
                     "\"db_word_size\":\"3\",\n" +
                     "\"bn_match_scores\":\"2,-3\",\n" +
                     "\"bp_gapcosts\":\"11,1\",\n" +
                     "\"sequence\":\">tr|A0PQ23|A0PQ23_MYCUA Chorismate pyruvate-lyase\\r\\nMLAVLPEKREMTECHLSDEEIRKLNRDLRILIATNGTLTRILNVLANDEIVVEIVKQQIQ\\r\\nDAAPEMDGCDHSSIGRVLRRDIVLKGRRSGIPFVAAESFIAIDLLPPEIVASLLETHRPI\\r\\nGEVMAASCIETFKEEAKVWAGESPAWLELDRRRNLPPKVVGRQYRVIAEGRPVIIITEYF\\r\\nLRSVFEDNSREEPIRHQRSVGTSARSGRSICT\",\n" +
-                    "\"rpsb_num_alignments\":\"50\",\n" +
+                    "\"rpsb_max_target_seqs\":\"50\",\n" +
                     "\"rpstbn_num_descriptions\":\"100\",\n" +
                     "\"psib_gapcosts\":\"11,1\",\n" +
                     "\"psib_threshold\":\"0.005\",\n" +
@@ -50,15 +50,15 @@ public class BLASTRunnerServlet extends HttpServlet {
                     "\"bp_word_size\":\"6\",\n" +
                     "\"tbx_evalue\":\"10.0\",\n" +
                     "\"rpstbn_evalue\":\"10.0\",\n" +
-                    "\"db_num_alignments\":\"50\",\n" +
-                    "\"bx_num_alignments\":\"50\",\n" +
+                    "\"db_max_target_seqs\":\"50\",\n" +
+                    "\"bx_max_target_seqs\":\"50\",\n" +
                     "\"psib_matrix\":\"BLOSUM62\",\n" +
                     "\"psib_pseudocount\":\"0\",\n" +
-                    "\"psib_num_alignments\":\"50\",\n" +
+                    "\"psib_max_target_seqs\":\"50\",\n" +
                     "\"db_matrix\":\"BLOSUM62\",\n" +
                     "\"search\":\"Search\",\n" +
                     "\"tbx_matrix\":\"BLOSUM62\",\n" +
-                    "\"bp_num_alignments\":\"50\",\n" +
+                    "\"bp_max_target_seqs\":\"50\",\n" +
                     "\"tbn_gapcosts\":\"11,1\",\n" +
                     "\"tbx_strand\":\"both\",\n" +
                     "\"rpsb_num_descriptions\":\"100\",\n" +
@@ -69,7 +69,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                     "\"bn_filter2\":\"m\",\n" +
                     "\"bn_filter1\":\"L\",\n" +
                     "\"db_evalue\":\"10.0\",\n" +
-                    "\"tbx_num_alignments\":\"50\",\n" +
+                    "\"tbx_max_target_seqs\":\"50\",\n" +
                     "\"bx_word_size\":\"6\",\n" +
                     "\"outfmt\":\"16\",\n" +
                     "\"psib_word_size\":\"3\",\n" +
@@ -77,7 +77,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                     "\"adv_param\":\"default\",\n" +
                     "\"bn_word_size\":\"11\",\n" +
                     "\"bx_matrix\":\"BLOSUM62\",\n" +
-                    "\"bn_num_alignments\":\"50\",\n" +
+                    "\"bn_max_target_seqs\":\"50\",\n" +
                     "\"db_threshold\":\"0.05\",\n" +
                     "\"tbn_filter1\":\"L\",\n" +
                     "\"db_pseudocount\":\"0\",\n" +
@@ -95,14 +95,14 @@ public class BLASTRunnerServlet extends HttpServlet {
             "\"datalib\":\"swissprot -remote\",\n" +
             "\"db_gapcosts\":\"11,1\",\n" +
             "\"tbn_word_size\":\"6\",\n" +
-            "\"tbn_num_alignments\":\"50\",\n" +
-            "\"rpstbn_num_alignments\":\"50\",\n" +
+            "\"tbn_max_target_seqs\":\"50\",\n" +
+            "\"rpstbn_max_target_seqs\":\"50\",\n" +
             "\"psib_evalue\":\"10.0\",\n" +
             "\"db_word_size\":\"3\",\n" +
             "\"bn_match_scores\":\"2,-3\",\n" +
             "\"bp_gapcosts\":\"11,1\",\n" +
             "\"sequence\":\"\",\n" +
-            "\"rpsb_num_alignments\":\"50\",\n" +
+            "\"rpsb_max_target_seqs\":\"50\",\n" +
             "\"rpstbn_num_descriptions\":\"100\",\n" +
             "\"psib_gapcosts\":\"11,1\",\n" +
             "\"psib_threshold\":\"0.005\",\n" +
@@ -110,15 +110,15 @@ public class BLASTRunnerServlet extends HttpServlet {
             "\"bp_word_size\":\"6\",\n" +
             "\"tbx_evalue\":\"10.0\",\n" +
             "\"rpstbn_evalue\":\"10.0\",\n" +
-            "\"db_num_alignments\":\"50\",\n" +
-            "\"bx_num_alignments\":\"50\",\n" +
+            "\"db_max_target_seqs\":\"50\",\n" +
+            "\"bx_max_target_seqs\":\"50\",\n" +
             "\"psib_matrix\":\"BLOSUM62\",\n" +
             "\"psib_pseudocount\":\"0\",\n" +
-            "\"psib_num_alignments\":\"50\",\n" +
+            "\"psib_max_target_seqs\":\"50\",\n" +
             "\"db_matrix\":\"BLOSUM62\",\n" +
             "\"search\":\"Search\",\n" +
             "\"tbx_matrix\":\"BLOSUM62\",\n" +
-            "\"bp_num_alignments\":\"50\",\n" +
+            "\"bp_max_target_seqs\":\"50\",\n" +
             "\"tbn_gapcosts\":\"11,1\",\n" +
             "\"tbx_strand\":\"both\",\n" +
             "\"rpsb_num_descriptions\":\"100\",\n" +
@@ -129,7 +129,7 @@ public class BLASTRunnerServlet extends HttpServlet {
             "\"bn_filter2\":\"m\",\n" +
             "\"bn_filter1\":\"L\",\n" +
             "\"db_evalue\":\"10.0\",\n" +
-            "\"tbx_num_alignments\":\"50\",\n" +
+            "\"tbx_max_target_seqs\":\"50\",\n" +
             "\"bx_word_size\":\"6\",\n" +
             "\"outfmt\":\"16\",\n" +
             "\"psib_word_size\":\"3\",\n" +
@@ -137,7 +137,7 @@ public class BLASTRunnerServlet extends HttpServlet {
             "\"adv_param\":\"default\",\n" +
             "\"bn_word_size\":\"11\",\n" +
             "\"bx_matrix\":\"BLOSUM62\",\n" +
-            "\"bn_num_alignments\":\"50\",\n" +
+            "\"bn_max_target_seqs\":\"50\",\n" +
             "\"db_threshold\":\"0.05\",\n" +
             "\"tbn_filter1\":\"L\",\n" +
             "\"db_pseudocount\":\"0\",\n" +
@@ -173,7 +173,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                 }
                 if (json != null) {
                     Map<String, Object> map = json.toMap();
-                    new JSonClusterRunner(map).startJob();
+                    new com.lordjoe.blast.JSonClusterRunner(map).startJob();
                 }
             } else {
                 String id = request.getParameter("JobId");
