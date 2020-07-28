@@ -23,7 +23,7 @@ public class BLASTRunnerServlet extends HttpServlet {
 
 
     public static final String SEQUENCE_FILE_TEXT =
-            "{\"bx_evalue\":\"10.0\",\n" +
+                     "{\"bx_evalue\":\"10.0\",\n" +
                     "\"bx_filter1\":\"L\",\n" +
                     "\"bx_gapcosts\":\"11,1\",\n" +
                     "\"tbx_word_size\":\"3\",\n" +
