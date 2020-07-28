@@ -231,36 +231,61 @@ public class BLASTRunnerServlet extends HttpServlet {
 // Create a new file upload handler
         ServletFileUpload upload = new ServletFileUpload(factory);
         File uploadDirParent = new File("/opt/blastserver");
-         File uploadDir = new File(uploadDirParent,id);
+        File uploadDir = new File(uploadDirParent,id);
         uploadDir.mkdirs();
         uploadDir.setWritable(true,false) ; // writable for all
         uploadDir.setReadable(true,false) ; // writable for all
+        uploadDir.setExecutable(true,false) ; // directories are executable
+        try {
+            File logfile = new File(uploadDir,"log.txt") ;
+            PrintWriter pw = new PrintWriter(new FileWriter(logfile));
+            pw.println("Job Log");
+            pw.close();
+            logfile.setWritable(true,false) ; // writable for all
+            logfile.setReadable(true,false) ; // writable for all
+         } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
+
 // Parse the request
         try {
             List<FileItem> items = upload.parseRequest(request);
             if (items != null && items.size() > 0) {
                 for (FileItem item : items) {
+                    String name = item.getFieldName();
                     // processes only fields that are not form fields
                     if (!item.isFormField()) {
                         String fileName = new File(item.getName()).getName();
-                         File storeFile = new File(uploadDir,fileName);
+                        if(fileName.length() > 0) {
+                            File storeFile = new File(uploadDir, fileName);
 
-                         if(storeFile.exists())      // overwrite is an error
-                             storeFile.delete();
-                          // saves the file on disk
-                        item.write(storeFile);
-                        Runtime.getRuntime().exec("chmod a+rw " + storeFile.getAbsolutePath());
-                        request.setAttribute("message",
-                                "Upload has been done successfully!");
-                        String name = item.getFieldName();
-                        String string = storeFile.getName();
-                        ret.put(name,string);
-
+                            if (storeFile.exists())      // overwrite is an error
+                                storeFile.delete();
+                            // saves the file on disk
+                            item.write(storeFile);
+                            Runtime.getRuntime().exec("chmod a+rw " + storeFile.getAbsolutePath());
+                            request.setAttribute("message",
+                                    "Upload has been done successfully!");
+                             String string = storeFile.getName();
+                            ret.put(name, string);
+                        }
                     }
                     else {
-                        String name = item.getFieldName();
                         String string = item.getString();
-                        ret.put(name,string);
+                        if(name.equalsIgnoreCase("sequence") && string.length() > 0)    {
+                            String sequenceFileName = "sequence.faa";
+                            File seuenceData = new File(uploadDir, sequenceFileName);
+                            PrintWriter pw = new PrintWriter(new FileWriter(seuenceData)) ;
+                            pw.println(string);
+                            pw.close();
+                            Runtime.getRuntime().exec("chmod a+rw " + seuenceData.getAbsolutePath());
+                            ret.put("seqfile", sequenceFileName);
+
+                        }
+                        else {
+                            ret.put(name, string);
+                        }
                     }
                 }
             }
