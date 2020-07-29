@@ -2,7 +2,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="bn_max_target_seqs" name="bn_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
             <option value='100'>100</option>
@@ -77,7 +77,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="bp_max_target_seqs" name="bp_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
             <option value='100'>100</option>
@@ -158,7 +158,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="bx_max_target_seqs" name="bx_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
             <option value='100'>100</option>
@@ -239,7 +239,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="tbn_max_target_seqs" name="tbn_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
             <option value='100'>100</option>
@@ -320,7 +320,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="tbx_max_target_seqs" name="tbx_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
             <option value='100'>100</option>
@@ -385,7 +385,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="db_max_target_seqs" name="db_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
             <option value='100'>100</option>
@@ -454,7 +454,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="psib_max_target_seqs" name="psib_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected>50</option>
             <option value='100'>100</option>
@@ -523,7 +523,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="rpsb_max_target_seqs" name="rpsb_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected="selected">50</option>
             <option value='100'>100</option>
@@ -534,7 +534,7 @@
         <div class="gap">
           <b title="One-line Descriptions for this Number of Database Sequences">Maximum Descriptions:</b>&nbsp;
           <select class="effect" id="rpsb_num_descriptions" name="rpsb_num_descriptions">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50'>50</option>
             <option value='100' selected="selected">100</option>
@@ -577,7 +577,7 @@
         <div class="gap">
           <b title="Maximum Number of Aligned Sequences to Display">Maximum Target Sequences:</b>&nbsp;
           <select class="effect" id="rpstbn_max_target_seqs" name="rpstbn_max_target_seqs">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50' selected="selected">50</option>
             <option value='100'>100</option>
@@ -588,7 +588,7 @@
         <div class="gap">
           <b title="One-line Descriptions for this Number of Database Sequences">Maximum Descriptions:</b>&nbsp;
           <select class="effect" id="rpstbn_num_descriptions" name="rpstbn_num_descriptions">
-            <option value='0'>0</option>
+            <option value='1'>1</option>
             <option value='10'>10</option>
             <option value='50'>50</option>
             <option value='100' selected="selected">100</option>

@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ArtifactManager">
     <artifact type="war" name="SlurmProject:war">
-      <output-path>$PROJECT_DIR$/target</output-path>
+      <output-path>/opt/blastserver</output-path>
       <properties id="maven-jee-properties">
         <options>
           <module>SlurmProject</module>
           <packaging>war</packaging>
         </options>
       </properties>
-      <root id="archive" name="SlurmRunner-0.0.1-SNAPSHOT.war">
+      <root id="archive" name="SlurmProject.war">
         <element id="artifact" artifact-name="SlurmProject:war exploded" />
       </root>
     </artifact>
     <artifact type="exploded-war" name="SlurmProject:war exploded">
-      <output-path>$PROJECT_DIR$/target/SlurmRunner-0.0.1-SNAPSHOT</output-path>
+      <output-path>$PROJECT_DIR$/target/SlurmProject</output-path>
       <properties id="maven-jee-properties">
         <options>
           <exploded>true</exploded>
@@ -37,7 +37,7 @@
           </element>
         </element>
         <element id="directory" name="META-INF">
-          <element id="file-copy" path="$PROJECT_DIR$/target/SlurmRunner-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+          <element id="file-copy" path="$PROJECT_DIR$/target/SlurmProject/META-INF/MANIFEST.MF" />
         </element>
         <element id="javaee-facet-resources" facet="SlurmProject/web/Web" />
       </root>
@@ -140,6 +140,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.2/commons-io-2.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: javax.servlet:servlet-api:2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: log4j:log4j:1.2.17">
