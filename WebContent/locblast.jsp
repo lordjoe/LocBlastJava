@@ -100,9 +100,26 @@
         </div>
       </div>
 
-      <div class="gap">
-        <div class="radio-container">
-          <b title="Plain Text with Hyperlinks, and Graphical Summary">Output:</b>&nbsp;<input name="outfmt" id="outfmt16" type="radio" value="16" checked="checked"/>&nbsp;Graphical Overview&nbsp;<input name="outfmt" id="outfmt0" type="radio" value="0"/>&nbsp;Plain&nbsp;Text
+      <div class="gap"></div>
+        <div class="gap">
+      <div class="radio-container">
+          <b title="Plain Text with Hyperlinks, and Graphical Summary">Output:</b>&nbsp;
+            <select class="effect" id="outfmt" name="outfmt">
+              <option value="0">pairwise</option>
+              <option value="1">query-anchored showing identities</option>
+              <option value="2">query-anchored no identities</option>
+              <option value="3">flat query-anchored show identities</option>
+              <option value="4">flat query-anchored no identities</option>
+              <option value="5" selected>XML Blast output</option>
+              <option value="6">tabular</option>
+              <option value="7">tabular with comment lines</option>
+              <option value="8">Text ASN.1</option>
+              <option value="9">Binary ASN.1</option>
+              <option value="10">Comma-separated values</option>
+              <option value="11"> BLAST archive format (ASN.1)</option>
+            </select>
+       <!--     Output:</b>&nbsp;<input name="outfmt" id="outfmt16" type="radio" value="16" checked="checked"/>&nbsp;
+            Graphical Overview&nbsp;<input name="outfmt" id="outfmt0" type="radio" value="0"/>&nbsp;Plain&nbsp;Text  -->
         </div>
       </div>
       <div class="gap">
