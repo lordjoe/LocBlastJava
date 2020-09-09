@@ -16,6 +16,16 @@
 
 
 	<servlet>
+		<servlet-name>comet</servlet-name>
+		<servlet-class>com.lordjoe.comet.CometRunnerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>comet</servlet-name>
+		<url-pattern>/comet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
 		<servlet-name>index</servlet-name>
 		<servlet-class>com.lordjoe.blast.IndexServlet</servlet-class>
 	</servlet>
