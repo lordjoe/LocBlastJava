@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.lordjoe.ssh.AccountsData" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -94,11 +96,18 @@
         <input class="effect" type="file" name="seqfile"
                accept=".fasta,.faa,.fas,.fna",.Fasta,.Faa,.Fas,.Fna,.FASTA,.FAA,.FAS,.FNA>
       </div>
-      <div class="gap">
-        <div class="radio-container">
-          <b title="Plain Text with Hyperlinks, and Graphical Summary">EMail:</b>&nbsp;<input name="email" id="email" type="text" value="lordjoe2000@gmail.com"  />
-        </div>
-      </div>
+      <div class="gap"></div>
+
+      <div class="radio-container">
+          <b title="Plain Text with Hyperlinks, and Graphical Summary">EMail:</b>&nbsp;
+          <select class="effect" id="email" name="email">
+              <c:forEach var="party" items="${ AccountsData.getAllUsersMails() }">
+              <option value="${party}">
+                <c:out value="${party}"/>
+              </option>
+            </c:forEach>
+          </select>
+         </div>
 
       <div class="gap"></div>
         <div class="gap">
