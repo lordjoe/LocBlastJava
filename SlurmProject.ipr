@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactManager">
     <artifact type="war" name="SlurmProject:war">
-      <output-path>/opt/blastserver</output-path>
+      <output-path>$PROJECT_DIR$/target</output-path>
       <properties id="maven-jee-properties">
         <options>
           <module>SlurmProject</module>
@@ -34,6 +34,7 @@
             <element id="library" level="project" name="Maven: org.json:json:20180813" />
             <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
             <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+            <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           </element>
         </element>
         <element id="directory" name="META-INF">
@@ -196,6 +197,26 @@
   </component>
   <component name="ProjectCodeStyleConfiguration">
     <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
+    <code_scheme name="Project" version="173">
+      <JetCodeStyleSettings>
+        <option name="PACKAGES_TO_USE_STAR_IMPORTS">
+          <value>
+            <package name="java.util" alias="false" withSubpackages="false" />
+            <package name="kotlinx.android.synthetic" alias="false" withSubpackages="true" />
+            <package name="io.ktor" alias="false" withSubpackages="true" />
+          </value>
+        </option>
+        <option name="PACKAGES_IMPORT_LAYOUT">
+          <value>
+            <package name="" alias="false" withSubpackages="true" />
+            <package name="java" alias="false" withSubpackages="true" />
+            <package name="javax" alias="false" withSubpackages="true" />
+            <package name="kotlin" alias="false" withSubpackages="true" />
+            <package name="" alias="true" withSubpackages="true" />
+          </value>
+        </option>
+      </JetCodeStyleSettings>
+    </code_scheme>
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -272,6 +293,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: jstl:jstl:1.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: log4j:log4j:1.2.17">
