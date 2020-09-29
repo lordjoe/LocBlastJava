@@ -48,9 +48,7 @@
 		<servlet-name>BLASTRunnerServlet</servlet-name>
 		<servlet-class>com.lordjoe.blast.BLASTRunnerServlet</servlet-class>
 	</servlet>
-
-
-	<servlet-mapping>
+ 	<servlet-mapping>
 		<servlet-name>BLASTRunnerServlet</servlet-name>
 		<url-pattern>/blastRunner</url-pattern>
 	</servlet-mapping>

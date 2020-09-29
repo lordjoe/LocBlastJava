@@ -35,10 +35,10 @@ public class JSonClusterRunner  {
 		registerRunner(this);
 	}
 	
-	public void startJob() {
+	public void startJob(String server) {
 		JSONObject json = new JSONObject(mapx);
 		boolean response = NetClientGet.guaranteeServer();
-		response = NetClientGet.callClientWithJSon("runProgram", json);
+		response = NetClientGet.callClientWithJSon(server, json);
 	}
 
 	private BlastLaunchDTO buildJob(String id) {

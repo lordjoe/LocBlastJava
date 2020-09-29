@@ -173,7 +173,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                 }
                 if (json != null) {
                     Map<String, Object> map = json.toMap();
-                    new com.lordjoe.blast.JSonClusterRunner(map).startJob();
+                    new com.lordjoe.blast.JSonClusterRunner(map).startJob("runProgram");
                 }
             } else {
                 String id = request.getParameter("JobId");
@@ -183,7 +183,7 @@ public class BLASTRunnerServlet extends HttpServlet {
 
                 } else {
                       runner = handleBlastLaunch(request);
-                    runner.startJob();
+                    runner.startJob("runProgram");
                 }
             }
         }

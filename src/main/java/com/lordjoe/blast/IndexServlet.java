@@ -16,17 +16,23 @@ public class IndexServlet extends HttpServlet {
     public static final String INDEX_TEXT = "\n" +
                 "<html>\n" +
             "  <head>\n" +
+            "    <link rel=\"shortcut icon\" href=\"./includes/Listfavicon.ico\" type=\"image/x-icon\">\n" +
             "    <title>Index Page</title>\n" +
+            "    <title>LIST Cluster Access</title>\n" +
+            "    <link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\" />\n"    +
+            "" +
             "  </head>\n" +
-            "  <body>\n" +
+              "  <body>\n" +
+            "   <div class=\"page-logo\">\n" +
+            "    <a href=\"https://www.list.lu/\"><img src=\"./includes/LISTLogo.png\" alt=\" \"/></a>\n" +
+            "  </div>\n" +
             "  <H1>Your Job Is Started</H1>\n" +
             "  \n" +
             "  <H1>You will receive an email when it is finished</H1>\n" +
             "  \n" +
             "   <a href=\"locblast.jsp\">LocBlast</a>  <p/> \n" +
-            "   <a href=\"/SlurmProject/blastRunner?Sample=sequence\">Call With Sequence</a> <p/> \n" +
-            "   <a href=\"/SlurmProject/blastRunner?Sample=file\">Call With File</a> <p/>  \n" +
-            "   <a href=\"/SlurmProject/blastRunner?stop=true\">Stop</a> <p/>  \n" +
+            "    <a href=\"comet.jsp\">Comet</a></p>  \n" +
+             "   <a href=\"/SlurmProject/blastRunner?stop=true\">Stop</a> <p/>  \n" +
             "  </body>\n" +
             "</html>";
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ArtifactManager">
-    <artifact type="war" name="SlurmProject:war">
-      <output-path>$PROJECT_DIR$/target</output-path>
+    <artifact type="war" build-on-make="true" name="SlurmProject:war">
+      <output-path>/opt/blastserver</output-path>
       <properties id="maven-jee-properties">
         <options>
           <module>SlurmProject</module>
@@ -13,7 +13,7 @@
         <element id="artifact" artifact-name="SlurmProject:war exploded" />
       </root>
     </artifact>
-    <artifact type="exploded-war" name="SlurmProject:war exploded">
+    <artifact type="exploded-war" build-on-make="true" name="SlurmProject:war exploded">
       <output-path>$PROJECT_DIR$/target/SlurmProject</output-path>
       <properties id="maven-jee-properties">
         <options>
@@ -63,6 +63,16 @@
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
+      <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+        <option name="myValues">
+          <value>
+            <list size="1">
+              <item index="0" class="java.lang.String" itemvalue="data-toggle" />
+            </list>
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </inspection_tool>
       <inspection_tool class="JavadocReference" enabled="true" level="WARNING" enabled_by_default="true" />
     </profile>
     <version value="1.0" />

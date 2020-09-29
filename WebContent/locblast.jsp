@@ -12,7 +12,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="./includes/Listfavicon.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>locBLAST - Local NCBI BLAST+ Search</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">//<![CDATA[
@@ -46,13 +47,29 @@
       document.getElementById('advced').style.fontFamily = "'Times New Roman', Times, serif";
     }
     //]]>
+
+    function validation() {
+      var x = document.forms["blastform"]["seqfile"].value;
+      if (x == null || x == "" || x=="no file chosen") {
+        var y = document.forms["blastform"]["sequence"].value;
+        if (y == null || y == "" ) {
+           alert("File and Sequence cannot be empty..!!");
+          return false;
+        }
+      }
+        return true;
+    }
     </script>
+
   </head>
   <body>
+  <div class="page-logo">
+    <a href="https://www.list.lu/"><img src="./includes/LISTLogo.png" alt=" "/></a>
+  </div>
   <div id="form" class="form" >
-    <form action="blastRunner" method="POST" name="blastform" enctype='multipart/form-data' >
+    <form   action="blastRunner" method="POST" name="blastform" enctype='multipart/form-data'  onsubmit="return validation()" >
       <h2 style="text-align: center;">
-        <i style="font-size: medium">loc</i><span style="color:blue; font-size: large">BLAST</span> - <span style="font-size: large;">local NCBI BLAST</span>
+        <i style="font-size: medium">loc</i><span style="color:blue; font-size: large">BLAST</span> - <span style="font-size: large;">LIST Cluster NCBI BLAST</span>
       </h2>
       <hr class="heffect" />
       <div id="tips">Choose Program to Use and Database to Search			</div>
@@ -94,7 +111,7 @@
       <div class="gap">
         Or load it from disk&nbsp;
         <input class="effect" type="file" name="seqfile"
-               accept=".fasta,.faa,.fas,.fna",.Fasta,.Faa,.Fas,.Fna,.FASTA,.FAA,.FAS,.FNA>
+               accept=".fasta,.faa,.fas,.fna,.Fasta,.Faa,.Fas,.Fna,.FASTA,.FAA,.FAS,.FNA">
       </div>
       <div class="gap"></div>
 
@@ -115,18 +132,21 @@
           <b title="Plain Text with Hyperlinks, and Graphical Summary">Output:</b>&nbsp;
             <select class="effect" id="outfmt" name="outfmt">
               <option value="0">pairwise</option>
+              <!--
               <option value="1">query-anchored showing identities</option>
               <option value="2">query-anchored no identities</option>
               <option value="3">flat query-anchored show identities</option>
               <option value="4">flat query-anchored no identities</option>
-              <option value="5" selected>XML Blast output</option>
-              <option value="6">tabular</option>
+              <option value="5">XML Blast output</option>
+               <option value="6">tabular</option>
               <option value="7">tabular with comment lines</option>
               <option value="8">Text ASN.1</option>
               <option value="9">Binary ASN.1</option>
               <option value="10">Comma-separated values</option>
               <option value="11"> BLAST archive format (ASN.1)</option>
-            </select>
+              -->
+              <option value="16" selected>XML2 Blast output</option>
+           </select>
        <!--     Output:</b>&nbsp;<input name="outfmt" id="outfmt16" type="radio" value="16" checked="checked"/>&nbsp;
             Graphical Overview&nbsp;<input name="outfmt" id="outfmt0" type="radio" value="0"/>&nbsp;Plain&nbsp;Text  -->
         </div>
@@ -139,7 +159,7 @@
       <div class="gap">
         <input class="effect" type="reset" name="reset" value="Reset">
         <input class="effect" type="button" name="clear" value="Clear Sequence" onClick="document.getElementById('sequence').value=''; document.getElementById('sequence').focus();">
-        <input class="effect" type="submit" name="search" id="search" value="Search">
+        <input class="effect" type="submit" name="search" id="search"    value="Search">
         <a href="help.php" title="Tutorial"><div id="help"></div></a>
       </div>
       <div style="padding: 7px 0 5px 0">

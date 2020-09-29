@@ -42,7 +42,7 @@ public class CometRunnerServlet extends HttpServlet {
 
             } else {
                 runner = handleBlastLaunch(request);
-                runner.startJob();
+                runner.startJob("runComet");
             }
         }
 
@@ -78,6 +78,7 @@ public class CometRunnerServlet extends HttpServlet {
 
     private Map<String, String> getFiles(HttpServletRequest request, String id) {
         Map<String, String> ret = new HashMap<>();
+        ret.put("program","comet");
         // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
 
@@ -127,20 +128,6 @@ public class CometRunnerServlet extends HttpServlet {
                             request.setAttribute("message",
                                     "Upload has been done successfully!");
                             String string = storeFile.getName();
-                            ret.put(name, string);
-                        }
-                    } else {
-                        String string = item.getString();
-                        if (name.equalsIgnoreCase("sequence") && string.length() > 0) {
-                            String sequenceFileName = "sequence.faa";
-                            File seuenceData = new File(uploadDir, sequenceFileName);
-                            PrintWriter pw = new PrintWriter(new FileWriter(seuenceData));
-                            pw.println(string);
-                            pw.close();
-                            Runtime.getRuntime().exec("chmod a+rw " + seuenceData.getAbsolutePath());
-                            ret.put("seqfile", sequenceFileName);
-
-                        } else {
                             ret.put(name, string);
                         }
                     }
