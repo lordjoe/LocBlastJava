@@ -63,14 +63,15 @@ public class AccountsData {
     protected static void guaranteeUsers() {
         if(accounts.isEmpty())   {
 
-            try {
-                // saving the properties in file
+                 // saving the properties in file
                 //accountsTable.setProperty("lordjoe2000@gmail.com", PRIVATE_KEY);
                 //System.out.println("Properties has been set in HashTable: " + accountsTable);
                 //saveProperties(accountsTable);
                 //System.out.println("Properties has been saved in: " + accountsTable);
 
                 // loading the saved properties
+                loadEncryptedFile(ENCRYPTED_NAME,accountsTableX,accounts)  ;
+                /*
                 loadProperties(ENCRYPTED_NAME,accountsTableX);
 
                 for (String o : accountsTableX.stringPropertyNames()) {
@@ -81,12 +82,64 @@ public class AccountsData {
                     AccountsData ac = new AccountsData(email,items[0], items[1]);
                     accounts.put(email,ac);
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
 
-            }
+                 */
 
         }
+    }
+
+    private static void loadEncryptedFile(String file,Properties temp,Map<String,AccountsData> decrypted) {
+        try {
+            decrypted.clear();
+            loadProperties(file,temp);
+
+            for (String o : temp.stringPropertyNames()) {
+                String name = o;
+                String value = temp.getProperty(o);
+                String[] items = value.split(DELIMITER);
+                //        AccountsData ac = new AccountsData(email,items[0],Encrypt.encryptString(items[1]));
+                AccountsData ac = new AccountsData(name,items[0], items[1]);
+                decrypted.put(name,ac);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
+
+    }
+
+    private static void loadUnEncryptedFile(String file,Properties temp,Map<String,AccountsData> decrypted) {
+        try {
+            decrypted.clear();
+            loadProperties(ENCRYPTED_NAME,temp);
+
+            for (String o : temp.stringPropertyNames()) {
+                String name = o;
+                String value = temp.getProperty(o);
+                String[] items = value.split(DELIMITER);
+                String encryptedPublicKey = encryptAsNeeded(items[1]) ;
+                AccountsData ac = new AccountsData(name,items[0], encryptedPublicKey);
+                 decrypted.put(name,ac);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
+
+    }
+
+
+    public static String encryptAsNeeded(String in)   {
+        if(in.contains("Comment: rsa-key-"))
+             return Encrypt.encryptString(in);
+        return in;
+    }
+
+
+    public static String decryptAsNeeded(String in)   {
+        if(in.contains("Comment: rsa-key-"))
+            return in;
+        return Encrypt.decryptString(in);
     }
 
     //Return and array of strings with all emails for which a private key is present
@@ -122,6 +175,21 @@ public class AccountsData {
         this.encryptedPublicKey = encryptedPublicKey;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AccountsData that = (AccountsData) o;
+        return Objects.equals(userName, that.userName) &&
+                Objects.equals(email, that.email) &&
+                Objects.equals(encryptedPublicKey, that.encryptedPublicKey);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userName, email, encryptedPublicKey);
+    }
+
     public String getClearPrivateKey()
     {
         return Encrypt.decryptString(encryptedPublicKey);
@@ -130,9 +198,9 @@ public class AccountsData {
     public String asTextString()
     {
         StringBuilder sb = new StringBuilder();
-        sb.append(email);
-        sb.append("=");
         sb.append(userName);
+        sb.append("=");
+        sb.append(email);
         sb.append(DELIMITER);
         sb.append(encryptedPublicKey);
 
@@ -142,6 +210,11 @@ public class AccountsData {
 
     protected static void loadUsers(String name)
     {
+        loadUsers(name,accountsTableX,accounts);
+
+    }
+
+    protected static void loadUsers(String name,Properties p1,Map<String,AccountsData> users) {
         try {
             // saving the properties in file
             //accountsTable.setProperty("lordjoe2000@gmail.com", PRIVATE_KEY);
@@ -150,15 +223,15 @@ public class AccountsData {
             //System.out.println("Properties has been saved in: " + accountsTable);
 
             // loading the saved properties
-            loadProperties(name,accountsTableX);
+            loadProperties(name,p1);
 
-            for (String o : accountsTableX.stringPropertyNames()) {
+            for (String o : p1.stringPropertyNames()) {
                 String email = o;
-                String value = accountsTableX.getProperty(o);
+                String value = p1.getProperty(o);
                 String[] items = value.split(DELIMITER);
-                AccountsData ac = new AccountsData(email,items[0],Encrypt.encryptString(items[1]));
+                AccountsData ac = new AccountsData(email,items[0],items[1]);
                 //      AccountsData ac = new AccountsData(email,items[0], items[1]);
-                accounts.put(email,ac);
+                users.put(email,ac);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -167,12 +240,46 @@ public class AccountsData {
 
     }
 
-    protected static  void createEncryptedUsers(String propFileName)
+
+    /**
+     *
+     * @param propFileName
+     */
+    protected static  void createDecryptedUsers(String outfile)
     {
         try {
-            loadUsers(propFileName);
+            PrintWriter out = new PrintWriter(new FileWriter(outfile));
+            guaranteeUsers();
+            for (String o : accounts.keySet()) {
+                String name = o;
+                AccountsData value = accounts.get(o);
+               out.print(o);
+                out.print("=");
+                 out.print(value.email);
+                out.print(DELIMITER);
+                String s = decryptAsNeeded(value.encryptedPublicKey);
+                s = s.replace("\n","\\n");
+                out.print(s);
+                out.println();
+            }
+            out.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
 
-            PrintWriter out = new PrintWriter(new FileWriter(ENCRYPTED_NAME));
+        }
+    }
+
+    /**
+     * 
+     * @param propFileName
+     * @param outfile
+     */
+    protected static  void createEncryptedUsers(String propFileName,String outfile)
+    {
+        try {
+            loadUnEncryptedFile(propFileName,accountsTableX,accounts) ;
+
+            PrintWriter out = new PrintWriter(new FileWriter(outfile));
             for (String o : accounts.keySet()) {
                 String email = o;
                 AccountsData value = accounts.get(o);
@@ -186,6 +293,7 @@ public class AccountsData {
                 String property = accountsTableX.getProperty(o);
                 String[] items = property.split(DELIMITER);
                 String item = items[1];
+                item = decryptAsNeeded(item);
                 if(!privateKey.equals(item)) {
                     String[] lines = privateKey.split("\n");
                     String[] lines1 = item.split("\n");
@@ -204,7 +312,46 @@ public class AccountsData {
     }
 
 
+    public static void usage(String[] args)  {
+        System.out.println("usage <filename> create open file from encrypted at /opt/blastserver ");
+        System.out.println("usage <filename> <outfile> create ebecrypted file from open file");
+    }
+
+    private static void validateUsers(String arg, String arg1, String arg2) {
+        Properties p0 = new Properties();
+        Properties p1 = new Properties();
+        Map<String,AccountsData> decrypted0 = new HashMap<>();
+        Map<String,AccountsData> decrypted = new HashMap<>();
+        guaranteeUsers();
+        loadUnEncryptedFile(arg,p0,decrypted0);
+        loadEncryptedFile(arg1,p1,decrypted);
+        assert(p0.size() == p1.size());
+        assert(decrypted0.size() == decrypted.size());
+        for (String s : decrypted.keySet()) {
+            AccountsData ac1 = decrypted.get(s);
+            AccountsData ac2 = decrypted0.get(s);
+            assert(ac1.equals(ac2) );
+        }
+    }
+
+
     public static void main(String[] args) throws IOException {
+        if(true) {
+            switch (args.length) {
+                case 1:
+                    createDecryptedUsers(args[0]);
+                    return;
+                case 2:
+                    createEncryptedUsers(args[0],args[1]);
+                    return;
+                case 3:
+                    validateUsers(args[0],args[1],args[2]);
+                    return;
+                default:
+                    usage(args);
+                    return;
+            }
+        }
 
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
 
@@ -214,4 +361,5 @@ public class AccountsData {
         System.out.println("Simone username is "+getUserName("simone.zorzan@list.lu"));
         System.out.println("Simone Private key is "+getPrivateKey("simone.zorzan@list.lu"));
     }
-}
+
+ }
