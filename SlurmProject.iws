@@ -93,7 +93,7 @@
       <recent name="com.lordjoe.blast" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.35">
+  <component name="RunManager" selected="Application.AccountsData">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -103,7 +103,8 @@
     <configuration name="AccountsData" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.lordjoe.ssh.AccountsData" />
       <module name="SlurmProject" />
-      <option name="PROGRAM_PARAMETERS" value="DecryptedUsers.txt EncryptedUsers.txt  " />
+      <option name="PROGRAM_PARAMETERS" value="property.dat MyEncryptedUsers.txt  " />
+      <option name="WORKING_DIRECTORY" value="/opt/blastserver" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -265,7 +266,7 @@
       <workItem from="1600882875568" duration="16014000" />
       <workItem from="1601318709509" duration="17476000" />
       <workItem from="1601571382730" duration="4273000" />
-      <workItem from="1601746413329" duration="2940000" />
+      <workItem from="1601746413329" duration="3456000" />
     </task>
     <task id="LOCAL-00001" summary="Version sort of works includes eclipse version">
       <created>1593017379776</created>
@@ -393,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601424013606</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="changed format optiona to 2">
+      <created>1602089052216</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1602089052216</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,10 +430,10 @@
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2603" y="479" width="444" height="244" key="#Tomcat_Server/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1600448816680" />
-    <state x="2278" y="261" width="1084" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601573876962">
+    <state x="2278" y="261" width="1084" height="924" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602089417952">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state x="2278" y="261" width="1084" height="900" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601573876962" />
+    <state x="2278" y="261" width="1084" height="924" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602089417952" />
     <state x="2085" y="612" width="531" height="417" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601486594144">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
@@ -442,33 +450,33 @@
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2510" y="460" width="530" height="485" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1600206393322" />
-    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2" timestamp="1601424013509">
+    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2" timestamp="1602089052018">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601424013509" />
+    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602089052018" />
     <state x="2453" y="380" width="430" height="485" key="FileChooserDialogImpl" timestamp="1600448812796">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2453" y="380" width="430" height="485" key="FileChooserDialogImpl/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1600448812796" />
-    <state width="1846" height="570" key="GridCell.Tab.0.bottom" timestamp="1601744095749">
+    <state width="1846" height="570" key="GridCell.Tab.0.bottom" timestamp="1602089384348">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state width="1846" height="570" key="GridCell.Tab.0.bottom/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601744095749" />
+    <state width="1846" height="570" key="GridCell.Tab.0.bottom/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602089384348" />
     <state width="1247" height="565" key="GridCell.Tab.0.bottom/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@3600.250.1920.1080" timestamp="1596059575403" />
-    <state width="1846" height="570" key="GridCell.Tab.0.center" timestamp="1601744095748">
+    <state width="1846" height="570" key="GridCell.Tab.0.center" timestamp="1602089384348">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state width="1846" height="570" key="GridCell.Tab.0.center/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601744095748" />
+    <state width="1846" height="570" key="GridCell.Tab.0.center/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602089384348" />
     <state width="1247" height="565" key="GridCell.Tab.0.center/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@3600.250.1920.1080" timestamp="1596059575403" />
-    <state width="1846" height="570" key="GridCell.Tab.0.left" timestamp="1601744095748">
+    <state width="1846" height="570" key="GridCell.Tab.0.left" timestamp="1602089384348">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state width="1846" height="570" key="GridCell.Tab.0.left/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601744095748" />
+    <state width="1846" height="570" key="GridCell.Tab.0.left/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602089384348" />
     <state width="1247" height="565" key="GridCell.Tab.0.left/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@3600.250.1920.1080" timestamp="1596059575402" />
-    <state width="1846" height="570" key="GridCell.Tab.0.right" timestamp="1601744095749">
+    <state width="1846" height="570" key="GridCell.Tab.0.right" timestamp="1602089384348">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state width="1846" height="570" key="GridCell.Tab.0.right/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601744095749" />
+    <state width="1846" height="570" key="GridCell.Tab.0.right/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602089384348" />
     <state width="1247" height="565" key="GridCell.Tab.0.right/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@3600.250.1920.1080" timestamp="1596059575403" />
     <state width="1110" height="523" key="GridCell.Tab.1.bottom" timestamp="1601574009427">
       <screen x="1680" y="0" width="1920" height="1200" />
@@ -542,10 +550,10 @@
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2249" y="199" width="1030" height="846" key="SettingsEditor/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601148336314" />
-    <state x="2216" y="400" width="806" height="529" key="Vcs.Push.Dialog.v2" timestamp="1601424016088">
+    <state x="2216" y="400" width="806" height="529" key="Vcs.Push.Dialog.v2" timestamp="1602089054146">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state x="2216" y="400" width="806" height="529" key="Vcs.Push.Dialog.v2/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1601424016088" />
+    <state x="2216" y="400" width="806" height="529" key="Vcs.Push.Dialog.v2/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602089054146" />
     <state x="2503" y="249" width="594" height="546" key="find.popup" timestamp="1601573215940">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
@@ -575,11 +583,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/AccountsData.java</url>
-          <line>344</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/AccountsData.java</url>
           <line>347</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -587,6 +590,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/AccountsData.java</url>
           <line>251</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/AccountsData.java</url>
+          <line>279</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/AccountsData.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
