@@ -72,13 +72,23 @@ public class CometRunnerServlet extends HttpServlet {
         String path = file.getAbsolutePath();
         saveParameters(map, file);
         map.put("JobId", idx);
+        Enumeration<String> parameterNames = request.getParameterNames();
+        Map<String, String> params = new HashMap<>();
+        StringBuilder sb = new StringBuilder();
+        while (parameterNames.hasMoreElements()) {
+            String parameterName = parameterNames.nextElement();
+            String value = request.getParameter(parameterName);
+            params.put(parameterName, value);
+            sb.append(parameterName + " = " + value + "\n");
+        }
+        String s = sb.toString();
 
         return new JSonClusterRunner(map);
     }
 
     private Map<String, String> getFiles(HttpServletRequest request, String id) {
         Map<String, String> ret = new HashMap<>();
-        ret.put("program","comet");
+        ret.put("program", "comet");
         // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
 
@@ -130,6 +140,9 @@ public class CometRunnerServlet extends HttpServlet {
                             String string = storeFile.getName();
                             ret.put(name, string);
                         }
+                    } else {
+                        String string = item.getString();
+                        ret.put(name, string);
                     }
                 }
             }

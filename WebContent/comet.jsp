@@ -84,7 +84,7 @@
         </div>
 
         <div class="gap">
-            Protein File File <input class="effect" type="file" name="fastafile" accept=".fasta,.faa,.fas,.fna,.Fasta,.Faa,.Fas,.Fna,.FASTA,.FAA,.FAS,.FNA">
+            Protein File <input class="effect" type="file" name="fastafile" accept=".fasta,.faa,.fas,.fna,.Fasta,.Faa,.Fas,.Fna,.FASTA,.FAA,.FAS,.FNA">
         </div>
 
         <div class="gap">
