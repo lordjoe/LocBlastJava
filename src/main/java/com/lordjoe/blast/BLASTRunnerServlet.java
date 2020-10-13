@@ -264,8 +264,9 @@ public class BLASTRunnerServlet extends HttpServlet {
                                 storeFile.delete();
                             // saves the file on disk
                             item.write(storeFile);
-                            Runtime.getRuntime().exec("chmod a+rw " + storeFile.getAbsolutePath());
-                            request.setAttribute("message",
+                            storeFile.setWritable(true,true) ; // writable for all
+                            storeFile.setReadable(true,true) ; // writable for all
+                               request.setAttribute("message",
                                     "Upload has been done successfully!");
                              String string = storeFile.getName();
                             ret.put(name, string);
@@ -279,7 +280,8 @@ public class BLASTRunnerServlet extends HttpServlet {
                             PrintWriter pw = new PrintWriter(new FileWriter(seuenceData)) ;
                             pw.println(string);
                             pw.close();
-                            Runtime.getRuntime().exec("chmod a+rw " + seuenceData.getAbsolutePath());
+                            seuenceData.setWritable(true,true) ; // writable for all
+                            seuenceData.setReadable(true,true) ; // writable for all
                             ret.put("seqfile", sequenceFileName);
 
                         }

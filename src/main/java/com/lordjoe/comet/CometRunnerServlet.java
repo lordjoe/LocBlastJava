@@ -134,8 +134,9 @@ public class CometRunnerServlet extends HttpServlet {
                                 storeFile.delete();
                             // saves the file on disk
                             item.write(storeFile);
-                            Runtime.getRuntime().exec("chmod a+rw " + storeFile.getAbsolutePath());
-                            request.setAttribute("message",
+                            storeFile.setReadable(true,true) ;
+                            storeFile.setWritable(true,true) ;
+                                request.setAttribute("message",
                                     "Upload has been done successfully!");
                             String string = storeFile.getName();
                             ret.put(name, string);
