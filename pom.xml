@@ -9,6 +9,12 @@
     <name>SLURM_Runner</name>
     <description>Remotly Runs SLURM Jobs</description>
     <dependencies>
+        <!-- sxsh user project -->
+        <dependency>
+            <groupId>com.lordjoe</groupId>
+            <artifactId>SSHUser</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--  these two needed to keel SL4j happy-->
         <dependency>
             <groupId>org.slf4j</groupId>

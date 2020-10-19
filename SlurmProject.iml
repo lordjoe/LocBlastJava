@@ -40,10 +40,6 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="JavaSE-1.8" jdkType="JavaSDK" />
-    <orderEntry type="library" name="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0" level="application" />
-    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.web.container" level="application" />
-    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
-    <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
     <orderEntry type="module-library">
       <library name="junit4">
         <CLASSES>
@@ -54,6 +50,15 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="module" module-name="SSHUser" />
+    <orderEntry type="library" name="Maven: com.jcabi:jcabi-ssh:1.6" level="project" />
+    <orderEntry type="library" name="Maven: com.jcabi:jcabi-aspects:0.22.5" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.7" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.5" level="project" />
+    <orderEntry type="library" name="Maven: org.cactoos:cactoos:0.16" level="project" />
+    <orderEntry type="library" name="Maven: com.jcraft:jsch:0.1.54" level="project" />
+    <orderEntry type="library" name="Maven: com.jcabi:jcabi-log:0.18.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />

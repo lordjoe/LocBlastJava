@@ -28,6 +28,17 @@
             <element id="module-output" name="SlurmProject" />
           </element>
           <element id="directory" name="lib">
+            <element id="archive" name="SSHUser-1.0-SNAPSHOT.jar">
+              <element id="module-output" name="SSHUser" />
+            </element>
+            <element id="library" level="project" name="Maven: com.jcabi:jcabi-ssh:1.6" />
+            <element id="library" level="project" name="Maven: com.jcabi:jcabi-aspects:0.22.5" />
+            <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.7" />
+            <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+            <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.5" />
+            <element id="library" level="project" name="Maven: org.cactoos:cactoos:0.16" />
+            <element id="library" level="project" name="Maven: com.jcraft:jsch:0.1.54" />
+            <element id="library" level="project" name="Maven: com.jcabi:jcabi-log:0.18.1" />
             <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
             <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" />
             <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
@@ -51,10 +62,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SlurmProject" />
+        <module name="SSHUser" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="SlurmProject" target="1.8" />
+      <module name="SSHUser" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
@@ -81,6 +94,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../sshuser/pom.xml" />
       </list>
     </option>
   </component>
@@ -230,6 +244,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../sshuser/SSHUser.iml" filepath="$PROJECT_DIR$/../sshuser/SSHUser.iml" />
       <module fileurl="file://$PROJECT_DIR$/SlurmProject.iml" filepath="$PROJECT_DIR$/SlurmProject.iml" />
     </modules>
   </component>
@@ -272,6 +287,50 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="Maven: com.jcabi:jcabi-aspects:0.22.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-aspects/0.22.5/jcabi-aspects-0.22.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-aspects/0.22.5/jcabi-aspects-0.22.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-aspects/0.22.5/jcabi-aspects-0.22.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.jcabi:jcabi-log:0.18.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-log/0.18.1/jcabi-log-0.18.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-log/0.18.1/jcabi-log-0.18.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-log/0.18.1/jcabi-log-0.18.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.jcabi:jcabi-ssh:1.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-ssh/1.6/jcabi-ssh-1.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-ssh/1.6/jcabi-ssh-1.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcabi/jcabi-ssh/1.6/jcabi-ssh-1.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.jcraft:jsch:0.1.54">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcraft/jsch/0.1.54/jsch-0.1.54-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/jcraft/jsch/0.1.54/jsch-0.1.54-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: commons-fileupload:commons-fileupload:1.4">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar!/" />
@@ -305,6 +364,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: javax.validation:validation-api:1.1.0.Final">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: jstl:jstl:1.2">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2.jar!/" />
@@ -316,6 +386,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/jstl/jstl/1.2/jstl-1.2-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: junit:junit:4.13">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13/junit-4.13-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: log4j:log4j:1.2.17">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/" />
@@ -325,6 +406,50 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.commons:commons-lang3:3.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.aspectj:aspectjrt:1.8.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjrt/1.8.7/aspectjrt-1.8.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjrt/1.8.7/aspectjrt-1.8.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/aspectj/aspectjrt/1.8.7/aspectjrt-1.8.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.cactoos:cactoos:0.16">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/cactoos/cactoos/0.16/cactoos-0.16.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/cactoos/cactoos/0.16/cactoos-0.16-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/cactoos/cactoos/0.16/cactoos-0.16-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.hamcrest:hamcrest-core:1.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.json:json:20180813">
