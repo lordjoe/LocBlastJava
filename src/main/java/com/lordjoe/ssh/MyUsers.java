@@ -4,7 +4,7 @@ package com.lordjoe.ssh;
  * com.lordjoe.ssh.MyUsers
  * User: Steve
  * Date: 10/19/20
- * Force load of this data
+ *  this call wants to be in this project
  */
 public class MyUsers {
     public static String[] getAllUsersMails()  {

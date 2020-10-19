@@ -9,23 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1c1c908-1f87-4e68-8cf7-ea036d11f536" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/MyUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SlurmProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SlurmProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SlurmProject.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/SlurmProject.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SlurmProject.iws" beforeDir="false" afterPath="$PROJECT_DIR$/SlurmProject.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/comet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/comet.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/locblast.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/locblast.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/AccountsData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lordjoe/utilities/Base64.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lordjoe/utilities/Blowfish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lordjoe/utilities/Encrypt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sshuser/SSHUser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../sshuser/SSHUser.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sshuser/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sshuser/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sshuser/src/main/java/com/lordjoe/ssh/ClusterSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sshuser/src/main/java/com/lordjoe/ssh/ClusterSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sshuser/src/main/java/com/lordjoe/ssh/SSHUserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sshuser/src/main/java/com/lordjoe/ssh/SSHUserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sshuser/src/main/java/com/lordjoe/utilities/MainRunner.java" beforeDir="false" />
+    <list default="true" id="b1c1c908-1f87-4e68-8cf7-ea036d11f536" name="Default Changelist" comment="Runs - uses zips broke out sshuser">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/MyUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lordjoe/ssh/MyUsers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +35,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../sshuser" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="d5e86c0d-bfdf-4e7d-b90c-e0fff54928b5" />
   <component name="KubernetesApiPersistence">
@@ -86,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SlurmRunner" />
+    <property name="last_opened_file_path" value="/opt/blastserver" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -275,7 +260,7 @@
       <workItem from="1602529931364" duration="7888000" />
       <workItem from="1602799304449" duration="4286000" />
       <workItem from="1602955326064" duration="1715000" />
-      <workItem from="1603124962017" duration="5037000" />
+      <workItem from="1603124962017" duration="5367000" />
     </task>
     <task id="LOCAL-00001" summary="Version sort of works includes eclipse version">
       <created>1593017379776</created>
@@ -445,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602654169199</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Runs - uses zips broke out sshuser">
+      <created>1603148235699</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1603148235699</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +462,8 @@
     <MESSAGE value="fix AccountsData" />
     <MESSAGE value="Fixed local Chmod" />
     <MESSAGE value="Fixed Accounts Data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Accounts Data" />
+    <MESSAGE value="Runs - uses zips broke out sshuser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Runs - uses zips broke out sshuser" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2603" y="479" width="444" height="244" key="#Tomcat_Server" timestamp="1600448816680">
@@ -497,14 +490,14 @@
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2510" y="460" width="530" height="485" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602955776554" />
-    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2" timestamp="1602654169136">
+    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2" timestamp="1603148254488">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602654169136" />
-    <state x="2959" y="212" width="430" height="485" key="FileChooserDialogImpl" timestamp="1603126601408">
+    <state x="2212" y="49" width="807" height="904" key="CommitChangelistDialog2/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1603148254488" />
+    <state x="2959" y="212" width="430" height="485" key="FileChooserDialogImpl" timestamp="1603148124130">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state x="2959" y="212" width="430" height="485" key="FileChooserDialogImpl/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1603126601408" />
+    <state x="2959" y="212" width="430" height="485" key="FileChooserDialogImpl/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1603148124130" />
     <state width="1156" height="837" key="GridCell.Tab.0.bottom" timestamp="1603140255200">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
@@ -593,10 +586,10 @@
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
     <state x="2305" y="386" width="722" height="508" key="NewModule_or_Project.wizard/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1602955376389" />
-    <state x="2340" y="270" width="1030" height="846" key="SettingsEditor" timestamp="1603148069589">
+    <state x="2340" y="270" width="1030" height="846" key="SettingsEditor" timestamp="1603148147386">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
-    <state x="2340" y="270" width="1030" height="846" key="SettingsEditor/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1603148069589" />
+    <state x="2340" y="270" width="1030" height="846" key="SettingsEditor/1680.0.1920.1200/3600.250.1920.1080/0.150.1680.1050@1680.0.1920.1200" timestamp="1603148147386" />
     <state x="2216" y="400" width="806" height="529" key="Vcs.Push.Dialog.v2" timestamp="1602654171202">
       <screen x="1680" y="0" width="1920" height="1200" />
     </state>
