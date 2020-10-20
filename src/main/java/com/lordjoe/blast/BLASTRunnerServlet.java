@@ -1,5 +1,6 @@
 package com.lordjoe.blast;
 
+import com.lordjoe.utilities.FileUtilities;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -217,6 +218,8 @@ public class BLASTRunnerServlet extends HttpServlet {
         return new JSonClusterRunner(map);
     }
 
+
+
     private  Map<String, String> getFiles(HttpServletRequest request,String id) {
         Map<String, String> ret = new HashMap<>();
         // Create a factory for disk-based file items
@@ -233,16 +236,18 @@ public class BLASTRunnerServlet extends HttpServlet {
         File uploadDirParent = new File("/opt/blastserver");
         File uploadDir = new File(uploadDirParent,id);
         uploadDir.mkdirs();
-        uploadDir.setWritable(true,false) ; // writable for all
-        uploadDir.setReadable(true,false) ; // writable for all
-        uploadDir.setExecutable(true,false) ; // directories are executable
+        FileUtilities.setDirectoryPermissions(uploadDir);
+//        uploadDir.setWritable(true,true) ; // writable for all
+//        uploadDir.setReadable(true,true) ; // writable for all
+//        uploadDir.setExecutable(true,true) ; // directories are executable
         try {
             File logfile = new File(uploadDir,"log.txt") ;
             PrintWriter pw = new PrintWriter(new FileWriter(logfile));
             pw.println("Job Log");
             pw.close();
-            logfile.setWritable(true,false) ; // writable for all
-            logfile.setReadable(true,false) ; // writable for all
+            FileUtilities.setReadWritePermissions(logfile);
+//            logfile.setWritable(true,true) ; // writable for all
+//            logfile.setReadable(true,true) ; // writable for all
          } catch (IOException e) {
             throw new RuntimeException(e);
 
@@ -264,8 +269,9 @@ public class BLASTRunnerServlet extends HttpServlet {
                                 storeFile.delete();
                             // saves the file on disk
                             item.write(storeFile);
-                            storeFile.setWritable(true,true) ; // writable for all
-                            storeFile.setReadable(true,true) ; // writable for all
+                            FileUtilities.setReadWritePermissions(storeFile);
+//                            storeFile.setWritable(true,true) ; // writable for all
+//                            storeFile.setReadable(true,true) ; // writable for all
                                request.setAttribute("message",
                                     "Upload has been done successfully!");
                              String string = storeFile.getName();
@@ -280,8 +286,9 @@ public class BLASTRunnerServlet extends HttpServlet {
                             PrintWriter pw = new PrintWriter(new FileWriter(seuenceData)) ;
                             pw.println(string);
                             pw.close();
-                            seuenceData.setWritable(true,true) ; // writable for all
-                            seuenceData.setReadable(true,true) ; // writable for all
+                            FileUtilities.setReadWritePermissions(seuenceData);
+//                            seuenceData.setWritable(true,true) ; // writable for all
+//                            seuenceData.setReadable(true,true) ; // writable for all
                             ret.put("seqfile", sequenceFileName);
 
                         }
