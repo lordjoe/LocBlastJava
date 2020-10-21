@@ -11,6 +11,11 @@
       </properties>
       <root id="archive" name="SlurmProject.war">
         <element id="artifact" artifact-name="SlurmProject:war exploded" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="SSHUser" />
+          </element>
+        </element>
       </root>
     </artifact>
     <artifact type="exploded-war" build-on-make="true" name="SlurmProject:war exploded">

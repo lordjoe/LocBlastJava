@@ -31,6 +31,11 @@ public class DownloadFileServlet extends HttpServlet {
         if(dirname != null)
             dirJob = new File(dirPath,dirname) ;
         File downloadFile = new File(dirJob,fileName);
+        if(!downloadFile.exists() && fileName.endsWith(".zip"))  {
+            fileName = fileName.substring(0,fileName.length() - 4) ; // drop .zip
+            downloadFile = new File(dirJob,fileName);
+        }
+
         FileInputStream inStream = new FileInputStream(downloadFile);
 
         // if you want to use a relative path to context root:
