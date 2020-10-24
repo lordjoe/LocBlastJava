@@ -80,7 +80,7 @@
 
 
         <div class="gap">
-            Spectrum File <input class="effect" type="file" name="seqfile" accept=".mgf">
+            Spectrum File <input class="effect" type="file" name="spectrumfile" accept=".mgf">
         </div>
 
         <div class="gap">

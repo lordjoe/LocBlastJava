@@ -29,7 +29,7 @@ public class CometRunnerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
         String stop = request.getParameter("stop");
-        ServletContext sc = request.getServletContext();
+        ServletContext sc = request.getSession().getServletContext();
         if (stop != null) {
             NetClientGet.callClientWithJSon("stop", null);
 
