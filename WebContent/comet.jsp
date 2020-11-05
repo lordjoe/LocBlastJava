@@ -50,15 +50,18 @@
     //]]>
 
     function validation() {
-        var x = document.forms["blastform"]["seqfile"].value;
+        var x = document.forms["blastform"]["spectrumfile"].value;
         var y = document.forms["blastform"]["fastafile"].value;
+        var q = document.forms["blastform"]["fastaremotefile"].value;
         var z = document.forms["blastform"]["parameters"].value;
 
+        var q_bad = ( q == null || q == "" || q=="no file chosen")
         var x_bad = ( x == null || y == "" || x=="no file chosen")
         var y_bad = ( y == null || y == "" || y=="no file chosen")
         var z_bad = ( z == null || z == "" || z=="no file chosen")
-        if (x_bad || y_bad || z_bad) {
-                  alert("Spectrum File and Protein file And Parameters File cannot be empty..!!");
+        var no_fasta = q_bad &amp;&amp; y_bad
+        if (x_bad ||   z_bad  || no_fasta ) {
+                alert("Spectrum File and Protein file And Parameters File cannot be empty..!!");
                 return false;
             }
 
@@ -83,6 +86,19 @@
             Spectrum File <input class="effect" type="file" name="spectrumfile" accept=".mgf">
         </div>
 
+
+        <div class="radio-container">
+            Remote Protein File:<select class="effect" id="fastaremotefile" name="fastaremotefile">
+                <option value="no file chosen">
+                    no file chosen
+                </option>
+                <c:forEach var="partyX" items="${ MyUsers.getCometRemoteFileList() }">
+                    <option value="${partyX}">
+                        <c:out value="${partyX}"/>
+                    </option>
+                </c:forEach>
+            </select>
+        </div>
         <div class="gap">
             Protein File <input class="effect" type="file" name="fastafile" accept=".fasta,.faa,.fas,.fna,.Fasta,.Faa,.Fas,.Fna,.FASTA,.FAA,.FAS,.FNA">
         </div>

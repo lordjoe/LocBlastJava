@@ -3,3 +3,11 @@
 /src/main/resources/.idea/
 /target/
 /WebContent/WEB-INF/lib/SlurmRunner.jar
+/.idea/artifacts/
+/.idea/
+/out/artifacts/SlurmProject_war_exploded/
+/WebContent/lib/font-awesome-4.7.0/
+/WebContent/lib/vis-4.20.1/
+/SlurmProject.iml
+/SlurmProject.ipr
+/SlurmProject.iws
