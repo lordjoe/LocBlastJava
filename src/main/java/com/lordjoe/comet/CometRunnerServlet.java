@@ -128,7 +128,7 @@ public class CometRunnerServlet extends HttpServlet {
                     if (!item.isFormField()) {
                         String fileName = new File(item.getName()).getName();
                         if (fileName.length() > 0) {
-                            File storeFile = new File(uploadDir, fileName);
+                            File storeFile = new File(uploadDir, fileName.replace(" ",""));
 
                             if (storeFile.exists())      // overwrite is an error
                                 storeFile.delete();

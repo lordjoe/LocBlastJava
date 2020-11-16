@@ -261,7 +261,7 @@ public class BLASTRunnerServlet extends HttpServlet {
                     String name = item.getFieldName();
                     // processes only fields that are not form fields
                     if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
+                        String fileName = new File(item.getName()).getName().replace(" ","");
                         if(fileName.length() > 0) {
                             File storeFile = new File(uploadDir, fileName);
 
