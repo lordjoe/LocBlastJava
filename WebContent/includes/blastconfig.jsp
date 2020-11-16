@@ -223,7 +223,7 @@
         </div>
         <div class="gap">
           <div class="radio-container">
-            <input type="checkbox" name="bx_filter1" value="L" id="bx_filter1" checked="checked"/>
+            <input type="checkbox" name="bx_filter1" value="L" id="bx_filter1" checked="false"/>
             &nbsp;<b title="Mask Regions of Low Compositional Complexity that May Cause Spurious or Misleading Results">Filter Low Complexity Regions</b>
           </div>
         </div>
