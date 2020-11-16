@@ -63,12 +63,12 @@
   </head>
   <body>
   <div class="page-logo">
-    <a href="https://www.list.lu/"><img src="./includes/LISTLogo.png" alt=" "/></a>
+    <a href="http://erp-hpcbioserver.private.list.lu:8080/SlurmProject/"><img src="./includes/LISTLogo.png" alt=" "/></a>
   </div>
   <div id="form" class="form" >
     <form   action="blastRunner" method="POST" name="blastform" enctype='multipart/form-data'  onsubmit="return validation()" >
       <h2 style="text-align: center;">
-        <i style="font-size: medium">loc</i><span style="color:blue; font-size: large">BLAST</span> - <span style="font-size: large;">LIST Cluster NCBI BLAST</span>
+        <i style="font-size: medium">LIST</i><span style="color:blue; font-size: large">BLAST</span> - <span style="font-size: large;">LIST Cluster NCBI BLAST</span>
       </h2>
       <hr class="heffect" />
       <div id="tips">Choose Program to Use and Database to Search			</div>

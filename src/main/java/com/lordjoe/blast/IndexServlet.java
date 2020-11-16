@@ -24,15 +24,15 @@ public class IndexServlet extends HttpServlet {
             "  </head>\n" +
               "  <body>\n" +
             "   <div class=\"page-logo\">\n" +
-            "    <a href=\"https://www.list.lu/\"><img src=\"./includes/LISTLogo.png\" alt=\" \"/></a>\n" +
+            "    <a href=\"http://erp-hpcbioserver.private.list.lu:8080/SlurmProject/\"><img src=\"./includes/LISTLogo.png\" alt=\" \"/></a>\n" +
             "  </div>\n" +
             "  <H1>Your Job Is Started</H1>\n" +
             "  \n" +
             "  <H1>You will receive an email when it is finished</H1>\n" +
             "  \n" +
-            "   <a href=\"locblast.jsp\">LocBlast</a>  <p/> \n" +
-            "    <a href=\"comet.jsp\">Comet</a></p>  \n" +
-             "   <a href=\"/SlurmProject/blastRunner?stop=true\">Stop</a> <p/>  \n" +
+            "   <a href=\"locblast.jsp\">LocBlast</a><p/> \n" +
+            "   <a href=\"comet.jsp\">Comet (work in proress)</a></p>  \n" +
+             "  <a href=\"/SlurmProject/blastRunner?stop=true\">Stop</a><p/>  \n" +
             "  </body>\n" +
             "</html>";
 

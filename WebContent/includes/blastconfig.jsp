@@ -304,7 +304,7 @@
         </div>
         <div class="gap">
           <div class="radio-container">
-            <input type="checkbox" name="tbn_filter1" value="L" id="tbn_filter1" checked="checked"/>
+            <input type="checkbox" name="tbn_seg" value="L" id="tbn_seg" checked="checked"/>
             &nbsp;<b title="Mask Regions of Low Compositional Complexity that May Cause Spurious or Misleading Results">Filter Low Complexity Regions</b>
           </div>
         </div>
@@ -555,7 +555,7 @@
         </div>
         <div class="gap">
           <div class="radio-container">
-            <input type="checkbox" name="rpsb_filter1" value="L" id="rpsb_filter1"/>
+            <input type="checkbox" name="rpsb_seg" value="L" id="rpsb_seg"/>
             &nbsp;<b title="Mask Regions of Low Compositional Complexity that May Cause Spurious or Misleading Results">Filter Low Complexity Regions</b>
           </div>
         </div>
@@ -617,7 +617,7 @@
         </div>
         <div class="gap">
           <div class="radio-container">
-            <input type="checkbox" name="rpstbn_filter1" value="L" id="rpstbn_filter1"/>
+            <input type="checkbox" name="rpstbn_seg" value="L" id="rpstbn_seg"/>
             &nbsp;<b title="Mask Regions of Low Compositional Complexity that May Cause Spurious or Misleading Results">Filter Low Complexity Regions</b>
           </div>
         </div>

@@ -15,7 +15,7 @@
   </head>
   <body>
   <div class="page-logo">
-    <a href="https://www.list.lu/"><img src="./includes/LISTLogo.png" alt=" "/></a>
+    <a href="http://erp-hpcbioserver.private.list.lu:8080/SlurmProject/"><img src="./includes/LISTLogo.png" alt=" "/></a>
   </div>
   <H1>Welcome to LIST Cluster Access</H1>
   <% 
