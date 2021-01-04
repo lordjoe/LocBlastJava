@@ -97,6 +97,7 @@
             <option value="est -remote" id="est">Expressed Sequence Tags (EST)</option>
             <option value="pdb -remote" id="pdb">Protein Data Bank (PDB)</option>
             <option value="pat -remote" id="pat">Patented Protein Sequences (PAT)</option>
+            <option value="nr.viridiplantae -remote" id="pat">Plant Non-redundant Protein/Nucleotide Sequences (NR/NT)</option>
           </select>
       </div>
       <div class="gap">
