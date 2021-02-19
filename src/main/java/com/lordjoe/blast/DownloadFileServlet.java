@@ -32,7 +32,7 @@ public class DownloadFileServlet extends HttpServlet {
             dirJob = new File(dirPath,dirname) ;
         File downloadFile = new File(dirJob,fileName);
         if(!downloadFile.exists() && fileName.endsWith(".zip"))  {
-            fileName = fileName.substring(0,fileName.length() - 4) ; // drop .zip
+          //  fileName = fileName.substring(0,fileName.length() - 4) ; // drop .zip
             downloadFile = new File(dirJob,fileName);
         }
 
