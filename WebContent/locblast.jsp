@@ -78,12 +78,12 @@
           <option value="blastn" id="blastn">BlastN</option>
           <option value="blastp" id="blastp" selected>BlastP</option>
           <option value="blastx" id="blastx">BlastX</option>
-          <option value="tblastn" id="tblastn">tBlastN</option>
+         <%-- <option value="tblastn" id="tblastn">tBlastN</option>
           <option value="tblastx" id="tblastx">tBlastX</option>
           <option value="deltablast" id="deltablast">DeltaBlast</option>
           <option value="psiblast" id="psiblast">PSI-Blast</option>
           <option value="rpsblast" id="rpsblast">RPS-Blast</option>
-          <option value="rpstblastn" id="rpstblastn">RPS-tBlastN</option>
+          <option value="rpstblastn" id="rpstblastn">RPS-tBlastN</option> --%>
         </select>
         <div id="pgm_desc"></div>
       </div>
@@ -132,6 +132,7 @@
           <b title="Plain Text with Hyperlinks, and Graphical Summary">Output:</b>&nbsp;
             <select class="effect" id="outfmt" name="outfmt">
               <option value="0">pairwise</option>
+              <option value="5">XML Blast output</option>
               <!--
               <option value="1">query-anchored showing identities</option>
               <option value="2">query-anchored no identities</option>
